@@ -10,7 +10,7 @@ import (
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       fmt.Printf("%s is %s. years old\n", os.Getenv("NAME"), os.Getenv("AGE")),
+		Body:       os.Getenv("NAME"),
 	}, nil
 }
 
