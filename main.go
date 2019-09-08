@@ -4,13 +4,14 @@ import (
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	"os"
-	"fmt"
 )
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+	var name string
+	name = os.Getenv("NAME")
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       os.Getenv("NAME"),
+		Body:       name,
 	}, nil
 }
 
